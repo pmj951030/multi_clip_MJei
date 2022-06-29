@@ -6,6 +6,6 @@ class MCLIPConfig(transformers.PretrainedConfig):
 
     def __init__(self, modelBase='xlm-roberta-large', transformerDimSize=1024, imageDimSize=512, **kwargs): ##768 ->512
         self.transformerDimensions = transformerDimSize
-        self.numDims = imageDimSize
+        self.numDims = 512
         self.modelBase = modelBase
         super().__init__(**kwargs)
