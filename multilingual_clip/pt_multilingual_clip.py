@@ -10,7 +10,7 @@ class MultilingualCLIP(transformers.PreTrainedModel):
         super().__init__(config, *args, **kwargs)
         self.transformer = transformers.AutoModel.from_pretrained(config.modelBase)
         self.LinearTransformation = torch.nn.Linear(in_features=config.transformerDimensions,
-                                                    out_features=config.numDims)
+                                                    out_features=512)#config.numDims
 
     def forward(self, txt, tokenizer):
         txt_tok = tokenizer(txt, padding=True, return_tensors='pt')
